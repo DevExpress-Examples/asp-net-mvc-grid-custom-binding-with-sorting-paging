@@ -1,3 +1,14 @@
+<!-- default file list -->
+*Files to look at*:
+
+* [HomeController.cs](./CS/Sample/Controllers/HomeController.cs) (VB: [HomeController.vb](./VB/Sample/Controllers/HomeController.vb))
+* [Global.asax.cs](./CS/Sample/Global.asax.cs)
+* [CustomBindingModel.cs](./CS/Sample/Models/CustomBindingModel.cs) (VB: [CustomBindingModel.vb](./VB/Sample/Models/CustomBindingModel.vb))
+* [Northwind.cs](./CS/Sample/Models/Northwind.cs) (VB: [Northwind.vb](./VB/Sample/Models/Northwind.vb))
+* [GridViewPartial.cshtml](./CS/Sample/Views/Home/GridViewPartial.cshtml)
+* [Index.cshtml](./CS/Sample/Views/Home/Index.cshtml)
+* [_Layout.cshtml](./CS/Sample/Views/Shared/_Layout.cshtml)
+<!-- default file list end -->
 # How to implement a simple custom binding scenario for GridView
 
 
