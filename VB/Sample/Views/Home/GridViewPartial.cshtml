@@ -1,0 +1,22 @@
+@Html.DevExpress().GridView(
+    settings => {
+        settings.Name = "GridView";
+        settings.CallbackRouteValues = new { Controller = "Home", Action = "GridViewPartial" };
+        settings.Width = System.Web.UI.WebControls.Unit.Percentage(100);
+
+        settings.KeyFieldName = "CustomerID";
+        settings.Columns.Add("ContactName");
+        settings.Columns.Add("CompanyName");
+        settings.Columns.Add("ContactTitle");
+        settings.Columns.Add("City");
+        settings.Columns.Add("Phone");
+
+        settings.CustomBindingRouteValuesCollection.Add(
+            GridViewOperationType.Sorting,
+            new { Controller = "Home", Action = "GridViewSortingAction" }
+        );
+        settings.CustomBindingRouteValuesCollection.Add(
+            GridViewOperationType.Paging,
+            new { Controller = "Home", Action = "GridViewPagingAction" }
+        );
+}).BindToCustomData(Model).GetHtml()
