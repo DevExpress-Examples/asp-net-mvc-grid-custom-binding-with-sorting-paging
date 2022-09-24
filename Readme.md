@@ -16,7 +16,7 @@
 <!-- default file list end -->
 # How to implement a simple custom binding scenario for GridView
 <!-- run online -->
-**[[Run Online]](https://codecentral.devexpress.com/e4394)**
+**[[Run Online]](https://codecentral.devexpress.com/e4394/)**
 <!-- run online end -->
 
 
