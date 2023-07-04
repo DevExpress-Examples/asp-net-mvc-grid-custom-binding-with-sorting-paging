@@ -11,7 +11,7 @@
 
 This example demonstrates how to implement a simple custom binding scenario for the [GridView](https://docs.devexpress.com/AspNetMvc/8966/components/grid-view) extension and handle sorting and paging operations in the corresponding Action methods.
 
-This example demonstrates a universal implementation approach. It can be easily adopted and used for every data source object that implements the `IQueryable` interface.
+You can modify this approach to use with any data source object that implements the `IQueryable` interface.
 
 
 ## Implementation details
@@ -23,22 +23,22 @@ Assign `DevExpressEditorsBinder`  to the `ModelBinders.Binders.DefaultBinder` pr
 ModelBinders.Binders.DefaultBinder = new DevExpress.Web.Mvc.DevExpressEditorsBinder();
 ```
 
-### GridView partial view
+### Grid partial view
 
 The [CustomBindingRouteValuesCollection](https://docs.devexpress.com/AspNetMvc/DevExpress.Web.Mvc.GridViewSettings.CustomBindingRouteValuesCollection) property allows you to assign particular handling Actions for four data operations - paging, sorting, grouping and filtering. In this example, the property specifies custom routing for sorting and paging operations.
 
 ```razor
 settings.CustomBindingRouteValuesCollection.Add(
-GridViewOperationType.Sorting,
-new { Controller = "Home", Action = "GridViewSortingAction" }
+    GridViewOperationType.Sorting,
+    new { Controller = "Home", Action = "GridViewSortingAction" }
 );
 settings.CustomBindingRouteValuesCollection.Add(
-GridViewOperationType.Paging,
-new { Controller = "Home", Action = "GridViewPagingAction" }
+    GridViewOperationType.Paging,
+    new { Controller = "Home", Action = "GridViewPagingAction" }
 );
 ```
 
-The [CallbackRouteValues](https://docs.devexpress.com/AspNetMvc/DevExpress.Web.Mvc.GridSettingsBase.CallbackRouteValues) specifies the action to handle all other (standard) grid callbacks.
+The [CallbackRouteValues](https://docs.devexpress.com/AspNetMvc/DevExpress.Web.Mvc.GridSettingsBase.CallbackRouteValues) property specifies the action to handle all other (standard) grid callbacks.
 
 ```razor
 settings.CallbackRouteValues = new { Controller = "Home", Action = "GridViewPartial" };
@@ -46,7 +46,7 @@ settings.CallbackRouteValues = new { Controller = "Home", Action = "GridViewPart
 
 ### Controller
 
-Action methods update a [GridViewModel](https://docs.devexpress.com/AspNetMvc/DevExpress.Web.Mvc.GridViewModel) object that maintains the grid state with the information of the performed operation. Then, the grid view model's [ProcessCustomBinding](https://docs.devexpress.com/AspNetMvc/DevExpress.Web.Mvc.GridViewModel.ProcessCustomBinding.overloads) method is called to delegate a binding implementation to specific model-layer methods pointed by the method's certain parameters.
+A [GridViewModel](https://docs.devexpress.com/AspNetMvc/DevExpress.Web.Mvc.GridViewModel) object maintains grid state. Action methods update the model object with the information of the performed operation. The [ProcessCustomBinding](https://docs.devexpress.com/AspNetMvc/DevExpress.Web.Mvc.GridViewModel.ProcessCustomBinding.overloads) method delegates binding implementation to specific model-layer methods pointed by the method's certain parameters.
 
 ```csharp
 public ActionResult GridViewPartial() {
@@ -69,7 +69,7 @@ public ActionResult GridViewPagingAction(GridViewPagerState pager) {
 
 ### Model
 
-The two specified delegates are implemented to populate the grid view mode with the required data. To bind Grid to your particular model object, modify the following code line:
+Two specified delegates are implemented to populate the grid view mode with the required data. To bind Grid to your particular model object, modify the following code line:
 
 ```cs
 static IQueryable Model { get { return NorthwindDataProvider.GetCustomers(); } }
