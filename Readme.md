@@ -46,7 +46,7 @@ settings.CallbackRouteValues = new { Controller = "Home", Action = "GridViewPart
 
 ### Controller
 
-A [GridViewModel](https://docs.devexpress.com/AspNetMvc/DevExpress.Web.Mvc.GridViewModel) object maintains grid state. Action methods update the model object with the information of the performed operation. The [ProcessCustomBinding](https://docs.devexpress.com/AspNetMvc/DevExpress.Web.Mvc.GridViewModel.ProcessCustomBinding.overloads) method delegates binding implementation to specific model-layer methods pointed by the method's certain parameters.
+Action methods update the [GridViewModel](https://docs.devexpress.com/AspNetMvc/DevExpress.Web.Mvc.GridViewModel) object with the information of the performed operation. The [ProcessCustomBinding](https://docs.devexpress.com/AspNetMvc/DevExpress.Web.Mvc.GridViewModel.ProcessCustomBinding.overloads) method delegates binding implementation to specific model-layer methods pointed by the method's certain parameters.
 
 ```csharp
 public ActionResult GridViewPartial() {
@@ -69,7 +69,7 @@ public ActionResult GridViewPagingAction(GridViewPagerState pager) {
 
 ### Model
 
-Two specified delegates are implemented to populate the grid view mode with the required data. To bind Grid to your particular model object, modify the following code line:
+The specified delegates populate the grid view model with the required data. To bind Grid to your particular model object, modify the following code line:
 
 ```cs
 static IQueryable Model { get { return NorthwindDataProvider.GetCustomers(); } }
