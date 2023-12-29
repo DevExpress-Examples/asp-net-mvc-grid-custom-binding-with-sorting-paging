@@ -15,9 +15,6 @@
 * [_Layout.cshtml](./CS/Sample/Views/Shared/_Layout.cshtml)
 <!-- default file list end -->
 # How to implement a simple custom binding scenario for GridView
-<!-- run online -->
-**[[Run Online]](https://codecentral.devexpress.com/128551586/)**
-<!-- run online end -->
 
 
 <p>This sample demonstrates how to implement a simple custom binding scenario for the GridView extension by handling only sorting and paging operations in the corresponding Action methods.</p>
