@@ -5,9 +5,6 @@
 <!-- default badges end -->
 
 # Grid View for ASP.NET MVC - How to implement a simple custom binding scenario
-<!-- run online -->
-**[[Run Online]](https://codecentral.devexpress.com/128551586/)**
-<!-- run online end -->
 
 This example demonstrates how to implement a simple custom binding scenario for the [GridView](https://docs.devexpress.com/AspNetMvc/8966/components/grid-view) extension and handle sorting and paging operations in the corresponding Action methods.
 
